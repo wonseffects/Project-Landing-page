@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionalidades - Orbital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="container navbar">
+        <a href="index.html" class="logo">Orbital</a>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="precos.html">Preços</a></li>
+            </ul>
+        </nav>
+        
+        <a href="#" class="sign-in-btn">Entrar</a>
+
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</header>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>Ferramentas construídas para a <span>órbita perfeita</span> do seu projeto</h1>
+            <p>Descubra um ecossistema de funcionalidades pensadas para máxima performance, desde o planejamento até a execução final.</p>
+        </section>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <h3>Quantum Tasks</h3>
+                <p>Gerenciamento de tarefas inteligente com sub-tarefas, dependências e agendamento preditivo por IA para manter suas entregas sempre no prazo.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Stellar Dashboards</h3>
+                <p>Visualize o progresso em tempo real com painéis customizáveis. Métricas, gráficos e relatórios que transformam dados complexos em insights claros.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Collaborative Nebulae</h3>
+                <p>Crie espaços de trabalho onde a comunicação flui. Edição de documentos em tempo real, chat integrado e versionamento automático de arquivos.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Galaxy-Wide Integration</h3>
+                <p>Conecte o Orbital às ferramentas que você já ama. Integrações nativas com Slack, GitHub, Figma, Google Drive e muito mais.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Time-Warp Analytics</h3>
+                <p>Analise a produtividade da sua equipe com relatórios de tempo e performance. Identifique gargalos e otimize seu fluxo de trabalho como nunca antes.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Secure Outer Rim</h3>
+                <p>Segurança de nível empresarial com criptografia de ponta-a-ponta, controle de acesso granular e auditorias de segurança constantes.</p>
+            </div>
+        </section>
+    </main>
+    <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        // Adiciona/remove a classe 'active' para animar o botão (X) e mostrar/esconder o menu
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

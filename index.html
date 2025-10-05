@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbital - Conecte seu mundo com precisão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <div class="container navbar">
+        <a href="index.html" class="logo">Orbital</a>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="precos.html">Preços</a></li>
+            </ul>
+        </nav>
+        
+        <a href="#" class="sign-in-btn">Entrar</a>
+
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    </header>
+
+    <main>
+        <div class="container hero">
+            <div class="hero-text">
+                <h1><span>Conecte</span> seu mundo com <span>precisão</span></h1>
+                <p>Construa, acompanhe e gerencie seus projetos com uma plataforma fluida, desenhada para equipes modernas.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Começar agora</a>
+                    <a href="#" class="btn btn-secondary">Ver demonstração</a>
+                </div>
+            </div>
+            <div class="hero-globe">
+                <canvas id="globeCanvas"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <section class="container stats">
+        <div class="stat-item">
+            <h3>93%</h3>
+            <p>Fluxo de trabalho mais rápido</p>
+        </div>
+        <div class="stat-item">
+            <h3>10k+</h3>
+            <p>Usuários globais</p>
+        </div>
+        <div class="stat-item">
+            <h3>24/7</h3>
+            <p>Suporte disponível</p>
+        </div>
+        <div class="stat-item">
+            <h3>99.9%</h3>
+            <p>Garantia de Uptime</p>
+        </div>
+    </section>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.163.0/build/three.module.js"
+            }
+        }
+    </script>
+    <script type="module">
+        // O código JavaScript do globo permanece o mesmo
+        import * as THREE from 'three';
+        const scene = new THREE.Scene();
+        const canvasContainer = document.querySelector('.hero-globe');
+        const camera = new THREE.PerspectiveCamera(75, canvasContainer.clientWidth / canvasContainer.clientHeight, 0.1, 1000);
+        camera.position.z = 2;
+        const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#globeCanvas'), alpha: true });
+        renderer.setSize(canvasContainer.clientWidth, canvasContainer.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        const sphereGeometry = new THREE.SphereGeometry(1, 64, 64);
+        const sphereMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.005 });
+        const spherePoints = new THREE.Points(sphereGeometry, sphereMaterial);
+        scene.add(spherePoints);
+        const atmosphereGeometry = new THREE.SphereGeometry(1, 64, 64);
+        const atmosphereMaterial = new THREE.ShaderMaterial({
+            vertexShader: `varying vec3 vertexNormal; void main() { vertexNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+            fragmentShader: `varying vec3 vertexNormal; void main() { float intensity = pow(0.6 - dot(vertexNormal, vec3(0, 0, 1.0)), 2.0); gl_FragColor = vec4(0.54, 0.50, 1.0, 1.0) * intensity; }`,
+            blending: THREE.AdditiveBlending,
+            side: THREE.BackSide
+        });
+        const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
+        atmosphere.scale.set(1.2, 1.2, 1.2);
+        scene.add(atmosphere);
+        const group = new THREE.Group();
+        group.add(spherePoints);
+        group.add(atmosphere);
+        scene.add(group);
+        let mouseX = 0, mouseY = 0;
+        const targetRotation = { x: 0, y: 0 };
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
+        function animate() {
+            requestAnimationFrame(animate);
+            targetRotation.y = mouseX * 0.3;
+            targetRotation.x = mouseY * 0.3;
+            group.rotation.y += 0.002 + (targetRotation.y - group.rotation.y) * 0.05;
+            group.rotation.x += (targetRotation.x - group.rotation.x) * 0.05;
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => {
+            camera.aspect = canvasContainer.clientWidth / canvasContainer.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(canvasContainer.clientWidth, canvasContainer.clientHeight);
+        });
+    </script>
+    <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        // Adiciona/remove a classe 'active' para animar o botão (X) e mostrar/esconder o menu
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

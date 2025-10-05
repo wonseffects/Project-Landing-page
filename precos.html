@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preços - Orbital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="container navbar">
+        <a href="index.html" class="logo">Orbital</a>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="precos.html">Preços</a></li>
+            </ul>
+        </nav>
+        
+        <a href="#" class="sign-in-btn">Entrar</a>
+
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</header>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>Planos transparentes para <span>impulsionar</span> sua missão</h1>
+            <p>Escolha a órbita que melhor se adapta à sua equipe. Sem taxas ocultas, sem complicações.</p>
+        </section>
+
+        <section class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Navegador</h3>
+                <p>Para freelancers e pequenas equipes</p>
+                <div class="price">R$29 <span>/mês</span></div>
+                <ul>
+                    <li>Até 5 usuários</li>
+                    <li>Projetos ilimitados</li>
+                    <li>Quantum Tasks</li>
+                    <li>10GB de armazenamento</li>
+                    <li>Suporte via email</li>
+                </ul>
+                <a href="#" class="btn btn-secondary">Começar</a>
+            </div>
+            <div class="pricing-card popular">
+                <h3>Explorador</h3>
+                <p>Para equipes em crescimento</p>
+                <div class="price">R$59 <span>/mês</span></div>
+                <ul>
+                    <li>Até 20 usuários</li>
+                    <li>Projetos ilimitados</li>
+                    <li>Stellar Dashboards</li>
+                    <li>100GB de armazenamento</li>
+                    <li>Suporte prioritário</li>
+                    <li>Integrações Galaxy-Wide</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Escolher Plano</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Comandante</h3>
+                <p>Para grandes organizações</p>
+                <div class="price">Custom <span></span></div>
+                 <ul>
+                    <li>Usuários ilimitados</li>
+                    <li>Tudo do Explorador</li>
+                    <li>Secure Outer Rim</li>
+                    <li>Armazenamento ilimitado</li>
+                    <li>Gerente de conta dedicado</li>
+                    <li>SLA de Uptime</li>
+                </ul>
+                <a href="#" class="btn btn-secondary">Fale Conosco</a>
+            </div>
+        </section>
+    </main>
+    <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        // Adiciona/remove a classe 'active' para animar o botão (X) e mostrar/esconder o menu
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

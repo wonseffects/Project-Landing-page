@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluções - Orbital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="container navbar">
+        <a href="index.html" class="logo">Orbital</a>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="precos.html">Preços</a></li>
+            </ul>
+        </nav>
+        
+        <a href="#" class="sign-in-btn">Entrar</a>
+
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    </header>
+
+     <main class="container">
+        <section class="page-hero">
+            <h1>Soluções adaptadas para cada <span>constelação</span> de equipe</h1>
+            <p>Não importa o tamanho ou a missão da sua equipe, o Orbital se alinha perfeitamente às suas necessidades.</p>
+        </section>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <h3>Para Startups Ágeis</h3>
+                <p>Lance seus projetos na velocidade da luz. Com planos flexíveis e ferramentas de iteração rápida, ajudamos sua startup a decolar e escalar sem limites.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Para Corporações Globais</h3>
+                <p>Sincronize equipes distribuídas pelo mundo. Oferecemos segurança robusta, relatórios consolidados e uma visão unificada de todos os projetos da sua organização.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Para Agências Criativas</h3>
+                <p>Do briefing à entrega final, gerencie múltiplos clientes e projetos com clareza. Use quadros visuais, aprove o trabalho e encante seus clientes.</p>
+            </div>
+        </section>
+    </main>
+    <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        // Adiciona/remove a classe 'active' para animar o botão (X) e mostrar/esconder o menu
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

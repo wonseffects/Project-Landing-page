@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos - Orbital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="container navbar">
+        <a href="index.html" class="logo">Orbital</a>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="precos.html">Preços</a></li>
+            </ul>
+        </nav>
+        
+        <a href="#" class="sign-in-btn">Entrar</a>
+
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</header>
+
+     <main class="container">
+        <section class="page-hero">
+            <h1>Expanda seu <span>universo</span> de conhecimento</h1>
+            <p>Navegue por nossa galáxia de conteúdo, criada para ajudar você a extrair o máximo do Orbital e das melhores práticas de gestão.</p>
+        </section>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <h3>Base de Conhecimento</h3>
+                <p>Tutoriais detalhados, guias de início rápido e documentação completa sobre cada funcionalidade da nossa plataforma.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Blog "O Cosmos"</h3>
+                <p>Artigos sobre produtividade, liderança, futuro do trabalho e dicas de como usar o Orbital para otimizar sua rotina.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Eventos Astrais</h3>
+                <p>Participe de nossos webinars ao vivo, sessões de Q&A com especialistas e treinamentos exclusivos para nossos clientes.</p>
+            </div>
+        </section>
+    </main>
+    <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        // Adiciona/remove a classe 'active' para animar o botão (X) e mostrar/esconder o menu
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
